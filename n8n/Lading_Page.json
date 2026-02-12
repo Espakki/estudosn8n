@@ -1,0 +1,264 @@
+{
+  "name": "Lading_Page",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "vende-curso",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "fe5e2396-7ba7-450e-bc55-8ad6c87c72ca",
+      "name": "Webhook",
+      "webhookId": "0e06a2d9-b9dd-414e-99e6-096f6381abb0"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.pacote }}",
+                    "rightValue": "Design & Identidade",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "e08c3d3a-7075-40a0-8591-29f4672799a4"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "96185479-8d00-4907-8201-7ae170c029f2",
+                    "leftValue": "={{ $json.pacote }}",
+                    "rightValue": "Motion & Edição",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        304,
+        0
+      ],
+      "id": "b44134a3-f889-4d75-a0d7-f452277577c4",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "alunos",
+          "mode": "list",
+          "cachedResultName": "alunos"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "nome": "={{ $json.body.nome }}",
+            "email": "={{ $json.body.email }}",
+            "pacote": "={{ $json.body.pacote }}",
+            "data_registro": "={{ $json.body.data }}",
+            "id": 0
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "nome",
+              "displayName": "nome",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "pacote",
+              "displayName": "pacote",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "data_registro",
+              "displayName": "data_registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        160,
+        0
+      ],
+      "id": "266187e7-1f29-4d0b-a6e1-6ba628c859f9",
+      "name": "Insert rows in a table",
+      "credentials": {
+        "postgres": {
+          "id": "ooptW50yTKlHoEbw",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "🚀 Seu acesso chegou! Domine o Photoshop e Illustrator",
+        "message": "=Olá, {{ $json.nome }}, \n\nParabéns pela decisão. Você acaba de dar um passo importante para dominar as ferramentas que são o padrão da indústria de design gráfico.  \n\nMeu objetivo é que você pare de apenas \"apertar botões\" e passe a ter total autonomia técnica para criar identidades visuais e artes de alto impacto.  \n\nAqui está o seu link de acesso à plataforma: \n👉 [Link do Curso no Kiwify aqui]  \n\nO que você encontra agora:  \nMódulo de Fundamentos e Composição (PS)  \nVetorização e Logotipia (AI)  \nMateriais de apoio e exercícios práticos  \n\nQualquer dúvida técnica, basta responder a este e-mail. \n\nMãos à obra, \nWinicius",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        464,
+        96
+      ],
+      "id": "7cb55224-fef8-401a-b80d-b447924b570b",
+      "name": "Send a message",
+      "webhookId": "534f9d17-a13e-4471-9341-afa1c5697ae5"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "🎬 Hora de dar vida às suas criações! Acesso ao curso de Premiere e After Effects",
+        "message": "=Olá, {{ $json.nome }},\n\nSeja bem-vindo à nossa formação em Motion & Edição. O mercado de vídeo nunca esteve tão aquecido, e você está prestes a dominar as ferramentas que movem essa indústria.\n\nPrepare-se para transformar vídeos estáticos em narrativas dinâmicas com efeitos profissionais.\n\nAcesse sua área de membros agora:\n👉 [Link do Curso no Kiwify aqui]\n\nO que te espera:\n\nEdição, Corte e Narrativa (Premiere Pro)\n\nMotion Graphics e Keyframes (After Effects)\n\nVFX e Finalização Profissional\n\nEstou ansioso para ver seus primeiros projetos renderizados.\n\nForte abraço,\nWinicius",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        464,
+        -80
+      ],
+      "id": "49dd0cca-e15c-4b4c-af07-fdc7375240fc",
+      "name": "Send a message1",
+      "webhookId": "534f9d17-a13e-4471-9341-afa1c5697ae5"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Insert rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert rows in a table": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "87d5fc3f-f9bc-453c-88c1-b2cfd470427f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d564d84b097b6e8402f7c4f1d3067269e8e5537dd0f9c9a36802fd69d016ae3a"
+  },
+  "id": "VfJvRF8LWArZtGax",
+  "tags": []
+}
