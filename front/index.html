@@ -3,17 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Domine as Ferramentas Padrão da Indústria</title>
+    <title>Winicius | Formação Profissional em Design & Motion</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brandbg: '#161616',
-                        accent: '#F44A22',
-                        cream: '#FEF8E8'
-                    }
+                    colors: { brandbg: '#161616', accent: '#F44A22', cream: '#FEF8E8' }
                 }
             }
         }
@@ -35,18 +31,18 @@
                         Domine o Padrão da Indústria e <span class="text-accent">Vença no Mercado.</span>
                     </h1>
                     <p class="text-cream/70 mt-6 text-lg max-w-lg">
-                        Aprenda do zero ao avançado com técnica aplicada, sem enrolação e focada no que o mercado realmente exige.
+                        Aprenda do zero ao avançado com técnica aplicada, sem enrolação e focada no que o mercado exige.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center gap-6 mt-10">
-                        <button onclick="document.getElementById('packages').scrollIntoView()" class="w-full sm:w-auto bg-accent hover:bg-orange-600 text-brandbg font-black py-4 px-8 rounded-full transition-all transform hover:scale-105 shadow-2xl">
+                        <button onclick="document.getElementById('packages').scrollIntoView()" class="w-full sm:w-auto bg-accent hover:bg-orange-600 text-brandbg font-black py-4 px-8 rounded-full transition-all transform hover:scale-105">
                             QUERO ME PROFISSIONALIZAR
                         </button>
                         <span class="text-cream/50 text-sm">Vagas limitadas · Início imediato</span>
                     </div>
                 </div>
-                <div class="relative">
+                <div class="relative hidden md:block">
                     <div class="aspect-video rounded-2xl bg-gradient-to-br from-accent/20 to-transparent border border-white/10 flex items-center justify-center overflow-hidden">
-                        <span class="text-cream/20 font-bold uppercase tracking-tighter text-6xl">Visuals</span>
+                        <span class="text-cream/20 font-bold uppercase tracking-tighter text-6xl italic">Visuals</span>
                     </div>
                 </div>
             </div>
@@ -57,20 +53,22 @@
                 <div class="order-2 md:order-1">
                     <h3 class="text-3xl font-bold">Muito prazer, sou o <span class="text-accent">Winicius.</span></h3>
                     <p class="text-cream/70 mt-6 leading-relaxed">
-                        Passei anos em sala de aula decodificando as ferramentas mais complexas do mundo criativo para transformá-las em processos simples. Minha missão é te dar a autonomia técnica para que sua única preocupação seja a criação.
+                        Passei anos transformando ferramentas complexas em processos simples. Minha missão é te dar a autonomia técnica para que sua única preocupação seja a criação.
                     </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                    <div class="grid grid-cols-2 gap-4 mt-8">
                         <div class="p-4 rounded-xl glass border border-white/10">
                             <span class="text-accent font-bold block text-2xl">+5 Anos</span>
                             <span class="text-sm text-cream/50">Experiência Real</span>
                         </div>
                         <div class="p-4 rounded-xl glass border border-white/10">
                             <span class="text-accent font-bold block text-2xl">Didática</span>
-                            <span class="text-sm text-cream/50">Testada em Aula</span>
+                            <span class="text-sm text-cream/50">Focada em SI</span>
                         </div>
                     </div>
                 </div>
-                <div class="order-1 md:order-2 aspect-square rounded-2xl bg-gray-800 border border-white/10"></div>
+                <div class="order-1 md:order-2 aspect-square rounded-2xl bg-gray-900 border border-white/10 flex items-center justify-center">
+                    <span class="text-white/5 text-4xl font-black">FOTO</span>
+                </div>
             </div>
         </section>
 
@@ -81,38 +79,26 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="glass p-8 rounded-3xl border border-white/10 hover:border-accent/50 transition-colors group">
-                    <h3 class="text-2xl font-bold group-hover:text-accent transition-colors text-cream">Design & Identidade</h3>
+                <div class="glass p-8 rounded-3xl border border-white/10 hover:border-accent/50 transition-all">
+                    <h3 class="text-2xl font-bold">Design & Identidade</h3>
                     <p class="text-cream/50 mt-2">Marcas, Social Media e Impressos.</p>
                     <ul class="mt-8 space-y-4 text-cream/80">
-                        <li class="flex items-center gap-3">
-                            <span class="text-accent">✔</span> Tratamento e Composição (PS)
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-accent">✔</span> Vetorização e Identidade (AI)
-                        </li>
-                        <li class="flex items-center gap-3 text-cream/40">
-                            <span class="text-accent">✔</span> Fechamento de Arquivo
-                        </li>
+                        <li><span class="text-accent mr-2">✔</span> Tratamento e Composição (PS)</li>
+                        <li><span class="text-accent mr-2">✔</span> Vetorização e Identidade (AI)</li>
+                        <li class="opacity-40"><span class="text-accent mr-2">✔</span> Fechamento de Arquivo</li>
                     </ul>
                     <button data-package="Design & Identidade" onclick="openSignup(this)" class="mt-10 w-full bg-white/5 hover:bg-accent hover:text-brandbg text-cream font-bold py-4 rounded-xl transition-all">
                         Selecionar Trilha
                     </button>
                 </div>
 
-                <div class="glass p-8 rounded-3xl border border-white/10 hover:border-accent/50 transition-colors group">
-                    <h3 class="text-2xl font-bold group-hover:text-accent transition-colors">Motion & Edição</h3>
+                <div class="glass p-8 rounded-3xl border border-white/10 hover:border-accent/50 transition-all">
+                    <h3 class="text-2xl font-bold">Motion & Edição</h3>
                     <p class="text-cream/50 mt-2">Vídeos, YouTube e Cinema.</p>
                     <ul class="mt-8 space-y-4 text-cream/80">
-                        <li class="flex items-center gap-3">
-                            <span class="text-accent">✔</span> Edição e Narrativa (PR)
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <span class="text-accent">✔</span> Motion e VFX (AE)
-                        </li>
-                        <li class="flex items-center gap-3 text-cream/40">
-                            <span class="text-accent">✔</span> Color Grading & Sound Design
-                        </li>
+                        <li><span class="text-accent mr-2">✔</span> Edição e Narrativa (PR)</li>
+                        <li><span class="text-accent mr-2">✔</span> Motion e VFX (AE)</li>
+                        <li class="opacity-40"><span class="text-accent mr-2">✔</span> Color Grading</li>
                     </ul>
                     <button data-package="Motion & Edição" onclick="openSignup(this)" class="mt-10 w-full bg-white/5 hover:bg-accent hover:text-brandbg text-cream font-bold py-4 rounded-xl transition-all">
                         Selecionar Trilha
@@ -125,14 +111,13 @@
     <div id="modal" class="fixed inset-0 bg-brandbg/95 backdrop-blur-sm hidden items-center justify-center p-6 z-50">
         <div class="bg-[#1e1e1e] w-full max-w-md rounded-3xl p-8 border border-white/10 relative shadow-2xl">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-cream/30 hover:text-cream text-2xl">&times;</button>
-            
             <h3 id="modal-title" class="text-2xl font-bold text-accent">Finalizar Inscrição</h3>
-            <p id="modal-sub" class="text-cream/50 mt-2">Estamos quase lá.</p>
+            <p class="text-cream/50 mt-2 italic text-sm">Seu primeiro passo rumo ao padrão da indústria.</p>
             
             <form id="signupForm" class="mt-8 space-y-4">
-                <input id="userName" type="text" placeholder="Seu nome" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:border-accent transition-colors text-cream">
-                <input id="userEmail" type="email" placeholder="seu@email.com" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:border-accent transition-colors text-cream">
-                <button type="submit" id="submitBtn" class="w-full bg-accent text-brandbg font-black py-4 rounded-xl shadow-lg hover:brightness-110 transition-all">
+                <input id="userName" type="text" placeholder="Seu nome" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:border-accent transition-all text-cream">
+                <input id="userEmail" type="email" placeholder="seu@email.com" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 outline-none focus:border-accent transition-all text-cream">
+                <button type="submit" id="submitBtn" class="w-full bg-accent text-brandbg font-black py-4 rounded-xl shadow-lg hover:brightness-110 transition-all disabled:opacity-50">
                     GARANTIR MINHA VAGA
                 </button>
             </form>
@@ -141,9 +126,11 @@
     </div>
 
     <script>
+        const WEBHOOK_URL = 'http://192.168.1.250:5678/webhook-test/vende-curso';
         const modal = document.getElementById('modal');
         const form = document.getElementById('signupForm');
         const statusMsg = document.getElementById('statusMsg');
+        const btnSubmit = document.getElementById('submitBtn');
         let selectedPackage = "";
 
         function openSignup(btn) {
@@ -160,47 +147,39 @@
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const btn = document.getElementById('submitBtn');
             
-            const data = {
+            const payload = {
                 nome: document.getElementById('userName').value,
                 email: document.getElementById('userEmail').value,
-                pacote: selectedPackage,
-                data: new Date().toLocaleString()
+                pacote: selectedPackage
+                // O PostgreSQL gerará o timestamp automaticamente no banco!
             };
 
-            // EFEITO DE CARREGAMENTO
-            btn.disabled = true;
-            btn.innerText = "ENVIANDO...";
+            btnSubmit.disabled = true;
+            btnSubmit.innerText = "PROCESSANDO...";
 
             try {
-                // SUBSTITUA PELA SUA URL DE TESTE DO WEBHOOK NO n8n
-                const WEBHOOK_URL = 'http://192.168.1.250:5678/webhook-test/vende-curso';
-
                 const response = await fetch(WEBHOOK_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(payload)
                 });
 
-                if (response.ok) {
-                    statusMsg.innerText = "✅ Sucesso! Verifique seu e-mail.";
-                    statusMsg.className = "mt-4 text-center text-green-400 font-bold";
-                    setTimeout(closeModal, 3000);
-                } else {
-                    throw new Error();
-                }
+                if (!response.ok) throw new Error();
+
+                statusMsg.innerText = "✅ Sucesso! O n8n já recebeu seus dados.";
+                statusMsg.className = "mt-4 text-center text-green-400 font-bold";
+                setTimeout(closeModal, 3000);
             } catch (err) {
-                statusMsg.innerText = "❌ Erro ao conectar com o servidor.";
+                statusMsg.innerText = "❌ Erro: Verifique se o n8n está em modo 'Listen'.";
                 statusMsg.className = "mt-4 text-center text-red-400 font-bold";
             } finally {
                 statusMsg.classList.remove('hidden');
-                btn.disabled = false;
-                btn.innerText = "GARANTIR MINHA VAGA";
+                btnSubmit.disabled = false;
+                btnSubmit.innerText = "GARANTIR MINHA VAGA";
             }
         });
 
-        // Fechar com ESC
         window.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
     </script>
 </body>
